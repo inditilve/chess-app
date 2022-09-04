@@ -4,7 +4,7 @@ interface Props {
     imagePath: string;
     index: number
 }
-export default function Tile({imagePath, index}: Props) {
+export default function Tile({ imagePath, index }: Props) {
     var tileClassName = "tile white-tile";
     if (index % 2 === 0) {
         tileClassName = "tile black-tile"
@@ -13,7 +13,7 @@ export default function Tile({imagePath, index}: Props) {
     // var tileTextToDisplay = debugMode ? tile_id : ""
     // return <div className={tileClassName}>{tileTextToDisplay}</div>
     return <div className={tileClassName}>
-        <img src={imagePath}></img>
+        {imagePath && <div style={{ backgroundImage: `url(${imagePath})` }} className="chess-piece"></div>}
     </div>;
 
 }
